@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"myapp/eliza_project/doctor"
+	"myapp/section1/eliza_project/doctor"
 	"os"
 	"strings"
 )
