@@ -1,16 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"myapp/variables_dot_notation/doctor"
+)
 
 func main() {
-	//var whatToSay string
-	//whatToSay = "Hello, world again!"
+	var whatToSay string
 
-	whatToSay := "Hello, world again!"
+	whatToSay = doctor.Intro()
 
-	sayHelloWorld(whatToSay)
-}
-
-func sayHelloWorld(whatToSay string) {
 	fmt.Println(whatToSay)
 }
