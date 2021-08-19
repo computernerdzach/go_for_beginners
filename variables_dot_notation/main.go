@@ -6,8 +6,6 @@ import (
 )
 
 func main() {
-	var whatToSay string
-
 	whatToSay := doctor.Intro()
 
 	fmt.Println(whatToSay)
