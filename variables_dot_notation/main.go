@@ -3,8 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	var whatToSay string
-	whatToSay = "Hello, world again!"
+	//var whatToSay string
+	//whatToSay = "Hello, world again!"
+
+	whatToSay := "Hello, world again!"
 
 	sayHelloWorld(whatToSay)
 }
