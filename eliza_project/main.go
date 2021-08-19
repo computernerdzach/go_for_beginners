@@ -14,4 +14,7 @@ func main() {
 
 	fmt.Println(whatToSay)
 
+	userInput, _ := reader.ReadString('\n')
+
+	fmt.Println(userInput)
 }
