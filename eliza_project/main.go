@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"myapp/variables_dot_notation/doctor"
+	"myapp/eliza_project/doctor"
 	"os"
 )
 
@@ -14,7 +14,9 @@ func main() {
 
 	fmt.Println(whatToSay)
 
-	userInput, _ := reader.ReadString('\n')
+	for {
+		userInput, _ := reader.ReadString('\n')
 
-	fmt.Println(userInput)
+	}
+
 }
