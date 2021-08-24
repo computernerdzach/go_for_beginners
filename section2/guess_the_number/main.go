@@ -1,14 +1,29 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
 func main() {
-	// one way - declare, then assign (two steps)
-	var firstNumber int
-	firstNumber = 2
+	// var firstNumber = 2
+	// var secondNumber = 5
+	// var subtraction = 7
+	// var answer int
 
-	// another way, declare type and name and assign value
-	var secondNumber = 5
+	reader := bufio.NewReader(os.Stdin)
 
-	// one step variable: declare name, assign value, and let Go figure out type
-	subtraction := 7
+	// display welcome / instructions
+	fmt.Println("Guess the Number Game")
+	fmt.Println("---------------------")
+	fmt.Println("")
+
+	fmt.Println("Think of a number between 1 and 10 and press ENTER when ready.")
+	reader.ReadString('\n')
+
+	// take them throught the game
+
+	// give them the answer
 
 }
