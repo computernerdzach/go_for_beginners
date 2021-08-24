@@ -7,5 +7,4 @@ var myVar = "[package level variable in package main]"
 func main() {
 	blockVar := "[block level variable in package main, func main]"
 	packagetwo.PrintMe(myVar, blockVar)
-
 }
