@@ -19,12 +19,12 @@ func main() {
 	var subtraction = rand.Intn(8) + 2
 	var answer = firstNumber*secondNumber - subtraction
 
-	reader := bufio.NewReader(os.Stdin)
-
-	gameDisplay(firstNumber, secondNumber, subtraction, answer, *reader)
+	gameDisplay(firstNumber, secondNumber, subtraction, answer)
 }
 
-func gameDisplay(firstNumber, secondNumber, subtraction, answer int, reader bufio.Reader) {
+func gameDisplay(firstNumber, secondNumber, subtraction, answer int) {
+	reader := bufio.NewReader(os.Stdin)
+
 	// display welcome / instructions
 	fmt.Println("Guess the Number Game")
 	fmt.Println("---------------------")
