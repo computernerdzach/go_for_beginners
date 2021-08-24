@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"myapp/packageone"
+	"myapp/section2/packageone"
 )
 
 var one = "One"
