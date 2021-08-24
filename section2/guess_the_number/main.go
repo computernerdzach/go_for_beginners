@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-const prompt = "and press ENTER when ready."
+const prompt = "and don't type your number in, just press ENTER when ready."
 
 func main() {
 	var firstNumber = 2
