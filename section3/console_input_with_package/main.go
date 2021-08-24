@@ -47,7 +47,7 @@ func main() {
 		}
 
 		i, _ := strconv.Atoi(string(char))
-		fmt.Println(fmt.Sprintf("You chose %s", coffees[i]))
+		fmt.Printf("You chose %s.\n", coffees[i])
 	}
 
 	fmt.Println("Program exiting...")
