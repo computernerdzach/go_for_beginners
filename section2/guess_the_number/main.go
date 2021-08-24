@@ -17,7 +17,7 @@ func main() {
 	var firstNumber = rand.Intn(8) + 2
 	var secondNumber = rand.Intn(8) + 2
 	var subtraction = rand.Intn(8) + 2
-	var answer int
+	var answer = firstNumber*secondNumber - subtraction
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -43,6 +43,5 @@ func main() {
 	reader.ReadString('\n')
 
 	// give them the answer
-	answer = firstNumber*secondNumber - subtraction
 	fmt.Println("The answer is", answer)
 }
