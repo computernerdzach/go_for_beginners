@@ -33,7 +33,8 @@ func main() {
 			log.Fatal(err)
 		}
 
-		fmt.Println("You chose", char)
+		t := fmt.Sprintf("You chose %q", char)
+		fmt.Println("You chose", t)
 
 		if char == 'q' || char == 'Q' {
 			break
