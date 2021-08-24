@@ -1,14 +1,16 @@
 package main
 
 func main() {
-	// one way - declare, then assign (two steps)
-	var firstNumber int
-	firstNumber = 2
+	// ** one way - declare, then assign (two steps)
 
-	// another way, declare type and name and assign value
-	var secondNumber = 5
+	// var firstNumber int
+	// firstNumber = 2
 
-	// one step variable: declare name, assign value, and let Go figure out type
-	subtraction := 7
+	// ** another way, declare type and name and assign value
 
+	// var secondNumber = 5
+
+	// ** one step variable: declare name, assign value, and let Go figure out type
+
+	// subtraction := 7
 }
