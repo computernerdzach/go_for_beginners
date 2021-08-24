@@ -21,10 +21,10 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 
-	game_display(firstNumber, secondNumber, subtraction, answer, *reader)
+	gameDisplay(firstNumber, secondNumber, subtraction, answer, *reader)
 }
 
-func game_display(firstNumber, secondNumber, subtraction, answer int, reader bufio.Reader) {
+func gameDisplay(firstNumber, secondNumber, subtraction, answer int, reader bufio.Reader) {
 	// display welcome / instructions
 	fmt.Println("Guess the Number Game")
 	fmt.Println("---------------------")
