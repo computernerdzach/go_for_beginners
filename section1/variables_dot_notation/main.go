@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"myapp/variables_dot_notation/doctor"
+	"myapp/section1/variables_dot_notation/doctor"
 )
 
 func main() {
