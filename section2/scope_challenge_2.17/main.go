@@ -1,8 +1,6 @@
 package main
 
-import (
-	"myapp/section2/packagetwo"
-)
+import "myapp/section2/packagetwo"
 
 var myVar = "[package level variable in package main]"
 
