@@ -12,7 +12,7 @@ func main() {
 	var firstNumber = 2
 	var secondNumber = 5
 	var subtraction = 7
-	// var answer int
+	var answer int
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -38,5 +38,6 @@ func main() {
 	reader.ReadString('\n')
 
 	// give them the answer
-
+	answer = firstNumber*secondNumber - subtraction
+	fmt.Println("The answer is", answer)
 }
