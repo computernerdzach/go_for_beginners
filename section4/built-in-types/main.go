@@ -6,27 +6,47 @@ import "fmt"
 
 // interface type
 
+type Animal struct {
+	Name         string
+	Sound        string
+	NumberOfLegs int
+}
+
+// reciever points to type above, like a class function in python
+func (a *Animal) Says() {
+	fmt.Printf("A %s says %s", a.Name, a.Sound)
+	fmt.Println()
+}
+
+func (a *Animal) HowManyLegs() {
+	fmt.Printf("A %s has %d legs", a.Name, a.NumberOfLegs)
+	fmt.Println()
+}
+
 func main() {
-	intMap := make(map[string]int)
+	var dog Animal
+	dog.Name = "dog"
+	dog.Sound = "woof"
+	dog.NumberOfLegs = 4
+	dog.Says()
 
-	intMap["One"] = 1
-	intMap["Two"] = 2
-	intMap["Three"] = 3
-	intMap["Four"] = 4
-	intMap["Five"] = 5
-
-	for key, value := range intMap {
-		fmt.Println(key, value)
+	cat := Animal{
+		Name:         "cat",
+		Sound:        "meow",
+		NumberOfLegs: 4,
 	}
 
-	// delete(intMap, "Four")
+	cat.Says()
+	cat.HowManyLegs()
+}
 
-	el, ok := intMap["Four"]
-	if ok {
-		fmt.Println(el, "is in map")
-	} else {
-		fmt.Println(el, "is not in map")
+// variatic function
+func sumMany(nums ...int) int {
+	total := 0
+
+	for _, x := range nums {
+		total = total + x
 	}
 
-	intMap["Two"] = 4
+	return total
 }
