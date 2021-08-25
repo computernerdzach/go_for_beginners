@@ -1,12 +1,6 @@
 package main
 
-import "log"
-
-// basic types (numbers, strings, booleans)
-var myInt int
-var myUint uint
-var myFloat float32
-var myFloat64 float64
+import "fmt"
 
 // aggregate types (array, struct)
 
@@ -15,23 +9,12 @@ var myFloat64 float64
 // interface type
 
 func main() {
-	myInt = 10
-	myUint = 20
+	var myStrings [3]int
 
-	myFloat = 10.1
-	myFloat64 = 100.1
+	myStrings[0] = 1
+	myStrings[1] = 5
+	myStrings[2] = 7
 
-	log.Println(myInt, myUint, myFloat, myFloat64)
-
-	myString := "Zach"
-
-	log.Println(myString)
-
-	myString = "John"
-
-	var myBool = true
-	myBool = false
-
-	log.Println(myBool)
+	fmt.Println("First element in array is", myStrings[0])
 
 }
