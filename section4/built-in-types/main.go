@@ -1,48 +1,32 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
+import "fmt"
 
 // reference types (pointers, slices, maps, functions, channels)
 
 // interface type
 
 func main() {
-	var animals []string
-	animals = append(animals, "dog")
-	animals = append(animals, "fish")
-	animals = append(animals, "cat")
-	animals = append(animals, "horse")
+	intMap := make(map[string]int)
 
-	fmt.Println(animals)
+	intMap["One"] = 1
+	intMap["Two"] = 2
+	intMap["Three"] = 3
+	intMap["Four"] = 4
+	intMap["Five"] = 5
 
-	for i, x := range animals {
-		fmt.Println(i, x)
+	for key, value := range intMap {
+		fmt.Println(key, value)
 	}
 
-	fmt.Println("Element 0 is", animals[0])
+	// delete(intMap, "Four")
 
-	fmt.Println("First two elements are", animals[0:2])
+	el, ok := intMap["Four"]
+	if ok {
+		fmt.Println(el, "is in map")
+	} else {
+		fmt.Println(el, "is not in map")
+	}
 
-	fmt.Println("The slice is", len(animals), "elements long")
-
-	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
-
-	sort.Strings(animals)
-
-	fmt.Println("Is it sorted now?", sort.StringsAreSorted(animals))
-	fmt.Println(animals)
-
-	animals = DeleteFromSlice(animals, 1)
-	fmt.Println(animals)
-
-}
-
-func DeleteFromSlice(a []string, i int) []string {
-	a[i] = a[len(a)-1]
-	a[len(a)-1] = ""
-	a = a[:len(a)-1]
-	return a
+	intMap["Two"] = 4
 }
