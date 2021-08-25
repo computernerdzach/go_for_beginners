@@ -14,6 +14,7 @@ type User struct {
 	UserName       string
 	Age            int
 	FavoriteNumber float64
+	OwnsADog       bool
 }
 
 func main() {
