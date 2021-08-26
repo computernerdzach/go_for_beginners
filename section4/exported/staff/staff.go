@@ -1,5 +1,7 @@
 package staff
 
+import "log"
+
 var OverPaidLimit = 75000
 var underPaidLimit = 20000
 
@@ -31,11 +33,19 @@ func (e *Office) Overpaid() []Employee {
 
 func (e *Office) Underpaid() []Employee {
 	var underpaid []Employee
-
+	myFunction()
 	for _, x := range e.AllStaff {
 		if x.Salary < underPaidLimit {
 			underpaid = append(underpaid, x)
 		}
 	}
 	return underpaid
+}
+
+func (e *Office) notVisible() {
+	log.Println("Hello, world.")
+}
+
+func myFunction() {
+	log.Println("I am a function.")
 }
