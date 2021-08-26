@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"myapp/section5/INFINITE-LOOP/mylogger"
 	"os"
+	"time"
 )
 
 func main() {
@@ -21,5 +22,6 @@ func main() {
 		fmt.Print("-> ")
 		input, _ := reader.ReadString('\n')
 		ch <- input
+		time.Sleep(time.Second)
 	}
 }
