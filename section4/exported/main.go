@@ -18,9 +18,10 @@ func main() {
 		AllStaff: employees,
 	}
 
-	myStaff.All()
+	// myStaff.All()
 
 	// log.Println(myStaff.All())
-	log.Println(myStaff.Overpaid())
+	log.Println("Overpaid staff", myStaff.Overpaid())
+	log.Println("Underpaid staff", myStaff.Underpaid())
 
 }
