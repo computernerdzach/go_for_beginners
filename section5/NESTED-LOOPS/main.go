@@ -8,5 +8,6 @@ func main() {
 		for j := 1; j <= 3; j++ {
 			fmt.Print("   j: ", j)
 		}
+		fmt.Println()
 	}
 }
