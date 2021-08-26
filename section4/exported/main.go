@@ -20,6 +20,7 @@ func main() {
 
 	myStaff.All()
 
-	log.Println(myStaff.All())
+	// log.Println(myStaff.All())
+	log.Println(myStaff.Overpaid())
 
 }
