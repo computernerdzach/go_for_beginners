@@ -111,25 +111,25 @@ func updateComputerPrice() int {
 func printSummary() {
 	fmt.Printf("%s!", OGH)
 	fmt.Println("")
-	fmt.Println(fmt.Sprintf("You are in year %d of your rule.", year))
+	fmt.Printf("You are in year %d of your rule.", year)
 
 	if marketCrashVictims > 0 { // BOOL COUNT 5
 		color.Red("A terrible market crash wiped out %d of your team.", marketCrashVictims)
 	}
 
-	fmt.Println(fmt.Sprintf("In the previous year, %d of your team starved to death.", starved))
-	fmt.Println(fmt.Sprintf("In the previous year, %d employee(s) got employed by the corporation.", newEmployees))
-	fmt.Println(fmt.Sprintf("The employee head count is now %d.", employees))
-	fmt.Println(fmt.Sprintf("We mined %d bitcoins at %d bitcoins per computer.", cashMined, bitcoinGeneratedPerComputer))
+	fmt.Printf("In the previous year, %d of your team starved to death.", starved)
+	fmt.Printf("In the previous year, %d employee(s) got employed by the corporation.", newEmployees)
+	fmt.Printf("The employee head count is now %d.", employees)
+	fmt.Printf("We mined %d bitcoins at %d bitcoins per computer.", cashMined, bitcoinGeneratedPerComputer)
 
 	if amountStolenByHackers > 0 { // BOOL COUNT 6
 		color.Red("*** Hackers stole %d bitcoins, leaving %d bitcoins in your online wallet.", amountStolenByHackers, cash)
 	} else {
-		fmt.Println(fmt.Sprintf("We have %d bitcoins of cash in storage.", cash))
+		fmt.Printf("We have %d bitcoins of cash in storage.", cash)
 	}
 
-	fmt.Println(fmt.Sprintf("The corporation owns %d computers for mining.", computers))
-	fmt.Println(fmt.Sprintf("Computers currently cost %d bitcoins each.", computerPrice))
+	fmt.Printf("The corporation owns %d computers for mining.", computers)
+	fmt.Printf("Computers currently cost %d bitcoins each.", computerPrice)
 	fmt.Println("")
 }
 
@@ -147,8 +147,8 @@ func buyComputers() {
 	cash = cash - cost
 	computers = computers + computersToBuy
 
-	fmt.Println(fmt.Sprintf("%s, you now have %d computers", OGH, computers))
-	fmt.Println(fmt.Sprintf("and %d bitcoins of cash.", cash))
+	fmt.Printf("%s, you now have %d computers", OGH, computers)
+	fmt.Printf("and %d bitcoins of cash.", cash)
 }
 
 // sellComputers allows the player to sell computers, if any are on hand. Available
@@ -164,8 +164,8 @@ func sellComputers() {
 	computers = computers - computersToSell
 	cash = cash + computerPrice*computersToSell
 
-	fmt.Println(fmt.Sprintf("%s, you now have %d computers", OGH, computers))
-	fmt.Println(fmt.Sprintf("and %d bitcoins of cash.", cash))
+	fmt.Printf("%s, you now have %d computers", OGH, computers)
+	fmt.Printf("and %d bitcoins of cash.", cash)
 }
 
 // payEmployees allows the player to decide how much cash to use to feed people. If a valid
@@ -180,7 +180,7 @@ func payEmployees() {
 	}
 	cash = cash - cashPaidToEmployees
 
-	fmt.Println(fmt.Sprintf("%s, %d bitcoins remain.", OGH, cash))
+	fmt.Printf("%s, %d bitcoins remain.", OGH, cash)
 }
 
 // maintainComputers allows the user to choose how much to spend on maintenance
@@ -203,7 +203,7 @@ func maintainComputers() {
 	}
 	computersMaintained = maintenanceAmount / 2
 
-	fmt.Println(fmt.Sprintf("%s, we now have %d bitcoins in storage.", OGH, cash))
+	fmt.Printf("%s, we now have %d bitcoins in storage.", OGH, cash)
 }
 
 // checkForCrash checks for market crash, and counts the victims
