@@ -324,8 +324,9 @@ func GetYesOrNo(q string) bool {
 		}
 		if char == 'n' || char == 'N' { // BOOL COUNT 26
 			return false // BOOL COUNT 27
+		} else {
+			return true // BOOL COUNT 28
 		}
-		return true // BOOL COUNT 28
 	}
 }
 
