@@ -42,14 +42,12 @@ func main() {
 	}
 	fmt.Println("Q - Quit the program")
 
-	for {
-		char, _, err := keyboard.GetSingleKey()
+	char := ' '
+
+	for char != 'q' && char != 'Q' {
+		char, _, err = keyboard.GetSingleKey()
 		if err != nil {
 			log.Fatal(err)
-		}
-
-		if char == 'q' || char == 'Q' {
-			break
 		}
 
 		i, _ := strconv.Atoi(string(char))
