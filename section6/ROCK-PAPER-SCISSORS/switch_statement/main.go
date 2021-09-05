@@ -41,27 +41,35 @@ func main() {
 		fmt.Println("Round", i+1)
 		fmt.Println("-------")
 		fmt.Print("Please enter rock, paper, or scissors ->")
+
 		playerChoice, _ = reader.ReadString('\n')
 		playerChoice = strings.Replace(playerChoice, "\r\n", "", -1)
 		playerChoice = strings.Replace(playerChoice, "\n", "", -1)
 
+		fmt.Println()
+
 		if playerChoice == "rock" {
 			playerValue = ROCK
+			fmt.Println("Player chose ROCK")
 		} else if playerChoice == "paper" {
 			playerValue = PAPER
+			fmt.Println("Player chose PAPER")
 		} else if playerChoice == "scissors" {
 			playerValue = SCISSORS
+			fmt.Println("Player chose SCISSORS")
 		}
 
 		switch computerValue {
 		case ROCK:
-			fmt.Println("computer chose ROCK")
+			fmt.Println("Computer chose ROCK")
 		case PAPER:
-			fmt.Println("computer chose PAPER")
+			fmt.Println("Computer chose PAPER")
 		case SCISSORS:
-			fmt.Println("computer chose SCISSORS")
+			fmt.Println("Computer chose SCISSORS")
 		default:
 		}
+
+		fmt.Println()
 
 		if playerValue == computerValue {
 			fmt.Println("It's a draw")
