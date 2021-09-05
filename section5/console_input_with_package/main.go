@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"sort"
 	"strconv"
 
 	"github.com/eiannone/keyboard"
@@ -19,27 +18,22 @@ func main() {
 		_ = keyboard.Close()
 	}()
 
-	coffees := map[int]string{
-		1: "Cappucino",
-		2: "Latte",
-		3: "Americano",
-		4: "Mocha",
-		5: "Macchiato",
-		6: "Espresso",
-	}
+	coffees := make(map[int]string)
+	coffees[1] = "Cappucino"
+	coffees[2] = "Latte"
+	coffees[3] = "Americano"
+	coffees[4] = "Mocha"
+	coffees[5] = "Macchiato"
+	coffees[6] = "Espresso"
 
 	fmt.Println("MENU")
 	fmt.Println("----")
-
-	keySlice := make([]int, 0, len(coffees))
-	for num := range coffees {
-		keySlice = append(keySlice, num)
-	}
-	sort.Ints(keySlice)
-
-	for _, item := range keySlice {
-		fmt.Println(item, "-", coffees[item])
-	}
+	fmt.Println("1 - Cappucino")
+	fmt.Println("2 - Latte")
+	fmt.Println("3 - Americano")
+	fmt.Println("4 - Mocha")
+	fmt.Println("5 - Macchiato")
+	fmt.Println("6 - Espresso")
 	fmt.Println("Q - Quit the program")
 
 	char := ' '
@@ -51,7 +45,11 @@ func main() {
 		}
 
 		i, _ := strconv.Atoi(string(char))
-		fmt.Printf("You chose %s.\n", coffees[i])
+
+		_, ok := coffees[i]
+		if ok {
+			fmt.Printf("You chose %s.\n", coffees[i])
+		}
 	}
 
 	fmt.Println("Program exiting...")

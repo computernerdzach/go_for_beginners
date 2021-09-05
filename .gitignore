@@ -17,3 +17,6 @@
 pkg
 
 __debug_bin
+
+# OTHER
+.vscode
