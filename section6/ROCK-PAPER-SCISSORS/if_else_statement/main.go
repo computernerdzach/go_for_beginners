@@ -35,13 +35,9 @@ func main() {
 
 	if playerChoice == "rock" {
 		playerValue = ROCK
-	}
-
-	if playerChoice == "paper" {
+	} else if playerChoice == "paper" {
 		playerValue = PAPER
-	}
-
-	if playerChoice == "scissors" {
+	} else if playerChoice == "scissors" {
 		playerValue = SCISSORS
 	}
 
