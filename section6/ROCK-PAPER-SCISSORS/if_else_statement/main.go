@@ -39,6 +39,8 @@ func main() {
 		playerValue = PAPER
 	} else if playerChoice == "scissors" {
 		playerValue = SCISSORS
+	} else {
+		fmt.Println(playerChoice, "is not a valid option")
 	}
 
 	fmt.Println()
