@@ -23,6 +23,7 @@ func main() {
 	playerValue := -1
 	playerWins := 0
 	computerWins := 0
+	roundOver := false
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -38,25 +39,33 @@ func main() {
 
 		computerValue := rand.Intn(2)
 
-		fmt.Println("Round", i+1)
-		fmt.Println("-------")
-		fmt.Print("Please enter rock, paper, or scissors ->")
+		for !roundOver {
 
-		playerChoice, _ = reader.ReadString('\n')
-		playerChoice = strings.Replace(playerChoice, "\r\n", "", -1)
-		playerChoice = strings.Replace(playerChoice, "\n", "", -1)
+			fmt.Println("Round", i+1)
+			fmt.Println("-------")
+			fmt.Print("Please enter rock, paper, or scissors ->")
 
-		fmt.Println()
+			playerChoice, _ = reader.ReadString('\n')
+			playerChoice = strings.Replace(playerChoice, "\r\n", "", -1)
+			playerChoice = strings.Replace(playerChoice, "\n", "", -1)
 
-		if playerChoice == "rock" {
-			playerValue = ROCK
-			fmt.Println("Player chose ROCK")
-		} else if playerChoice == "paper" {
-			playerValue = PAPER
-			fmt.Println("Player chose PAPER")
-		} else if playerChoice == "scissors" {
-			playerValue = SCISSORS
-			fmt.Println("Player chose SCISSORS")
+			fmt.Println()
+
+			if playerChoice == "rock" {
+				playerValue = ROCK
+				fmt.Println("Player chose ROCK")
+				roundOver = true
+			} else if playerChoice == "paper" {
+				playerValue = PAPER
+				fmt.Println("Player chose PAPER")
+				roundOver = true
+			} else if playerChoice == "scissors" {
+				playerValue = SCISSORS
+				fmt.Println("Player chose SCISSORS")
+				roundOver = true
+			} else {
+				fmt.Println("Invalid entry.")
+			}
 		}
 
 		switch computerValue {
@@ -100,7 +109,6 @@ func main() {
 					playerWins++
 				}
 			default:
-				fmt.Println("--Invalid choice!--")
 			}
 			fmt.Println()
 			if i < 2 {
@@ -108,6 +116,11 @@ func main() {
 			}
 
 		}
+
+		playerChoice = ""
+		playerValue = -1
+		roundOver = false
+
 	}
 
 	if playerWins < computerWins {
