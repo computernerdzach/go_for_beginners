@@ -50,6 +50,10 @@ func main() {
 		if ok {
 			fmt.Printf("You chose %s.\n", coffees[i])
 		}
+
+		if _, ok := coffees[i]; ok {
+			fmt.Printf("You chose %s.\n", coffees[i])
+		}
 	}
 
 	fmt.Println("Program exiting...")
