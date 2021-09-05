@@ -65,6 +65,7 @@ func main() {
 				roundOver = true
 			} else {
 				fmt.Println("Invalid entry.")
+				playerValue = -1
 				if i < 2 {
 					fmt.Println("-------")
 				}
