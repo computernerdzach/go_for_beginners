@@ -65,6 +65,9 @@ func main() {
 				roundOver = true
 			} else {
 				fmt.Println("Invalid entry.")
+				if i < 2 {
+					fmt.Println("-------")
+				}
 			}
 		}
 
@@ -110,11 +113,11 @@ func main() {
 				}
 			default:
 			}
-			fmt.Println()
-			if i < 2 {
-				fmt.Println("-------")
-			}
 
+		}
+		fmt.Println()
+		if i < 2 {
+			fmt.Println("-------")
 		}
 
 		playerChoice = ""
@@ -136,6 +139,10 @@ func main() {
 		fmt.Println("*Game is a draw!*")
 		fmt.Println("*****************")
 	}
+
+	fmt.Println()
+	fmt.Println("Computer:", computerWins, "/ 3.")
+	fmt.Println("Player  :", playerWins, "/ 3.")
 }
 
 // clearScreen clears the screen
