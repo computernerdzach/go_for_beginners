@@ -32,9 +32,6 @@ type Round struct {
 var reader = bufio.NewReader(os.Stdin)
 
 func (g *Game) Rounds() {
-	// use select to process input in channels
-	// print info to screen
-	// keep track of round number
 	for {
 		select {
 		case round := <-g.RoundChan:
@@ -46,7 +43,6 @@ func (g *Game) Rounds() {
 	}
 }
 
-// clearScreen clears the screen
 func (g *Game) ClearScreen() {
 	if strings.Contains(runtime.GOOS, "windows") {
 		// windows
@@ -76,7 +72,7 @@ func (g *Game) PlayRound() bool {
 	g.DisplayChan <- fmt.Sprintf("Round %d", g.Round.RoundNumber)
 	g.DisplayChan <- ("-------")
 
-	fmt.Print("Please enter rock, paper, or scissors -> ")
+	g.DisplayChan <- ("Please enter rock, paper, or scissors -> ")
 	playerChoice, _ := reader.ReadString('\n')
 	playerChoice = strings.Replace(playerChoice, "\r\n", "", -1)
 	playerChoice = strings.Replace(playerChoice, "\n", "", -1)
@@ -162,10 +158,6 @@ func (g *Game) PrintSummary() {
 		g.DisplayChan <- ("*****************")
 	}
 	g.DisplayChan <- ("")
-	g.DisplayChan <- fmt.Sprintf("Computer:", g.Round.ComputerScore, "/ 3.")
-	g.DisplayChan <- fmt.Sprintf("Player  :", g.Round.PlayerScore, "/ 3.")
+	g.DisplayChan <- fmt.Sprint("Computer:", g.Round.ComputerScore, "/ 3.")
+	g.DisplayChan <- fmt.Sprint("Player  :", g.Round.PlayerScore, "/ 3.")
 }
-
-// g.DisplayChan <- fmt.Sprintf("Player chose %s", strings.ToUpper(playerChoice))
-// g.DisplayChan <- "Player Wins!"
-//
