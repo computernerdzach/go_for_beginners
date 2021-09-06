@@ -39,6 +39,7 @@ func (g *Game) Rounds() {
 			g.RoundChan <- 1
 		case msg := <-g.DisplayChan:
 			fmt.Println(msg)
+			g.DisplayChan <- ""
 		}
 	}
 }
@@ -58,21 +59,21 @@ func (g *Game) ClearScreen() {
 }
 
 func (g *Game) PrintIntro() {
-	g.DisplayChan <- ("Rock, Paper, & Scissors")
-	g.DisplayChan <- ("-----------------------")
-	g.DisplayChan <- ("Game is played for three rounds, and best of three wins the game. Good luck!")
-	g.DisplayChan <- ("")
+	g.DisplayChan <- "Rock, Paper, & Scissors"
+	g.DisplayChan <- "-----------------------"
+	g.DisplayChan <- "Game is played for three rounds, and best of three wins the game. Good luck!"
+	g.DisplayChan <- ""
 }
 
 func (g *Game) PlayRound() bool {
 	rand.Seed(time.Now().UnixNano())
 	playerValue := 1
 
-	g.DisplayChan <- ("")
+	g.DisplayChan <- ""
 	g.DisplayChan <- fmt.Sprintf("Round %d", g.Round.RoundNumber)
-	g.DisplayChan <- ("-------")
+	g.DisplayChan <- "-------"
 
-	g.DisplayChan <- ("Please enter rock, paper, or scissors -> ")
+	g.DisplayChan <- "Please enter rock, paper, or scissors -> "
 	playerChoice, _ := reader.ReadString('\n')
 	playerChoice = strings.Replace(playerChoice, "\r\n", "", -1)
 	playerChoice = strings.Replace(playerChoice, "\n", "", -1)
@@ -94,11 +95,11 @@ func (g *Game) PlayRound() bool {
 
 	switch computerValue {
 	case ROCK:
-		g.DisplayChan <- ("Computer chose ROCK")
+		g.DisplayChan <- "Computer chose ROCK"
 	case PAPER:
-		g.DisplayChan <- ("Computer chose PAPER")
+		g.DisplayChan <- "Computer chose PAPER"
 	case SCISSORS:
-		g.DisplayChan <- ("Computer chose SCISSORS")
+		g.DisplayChan <- "Computer chose SCISSORS"
 	default:
 	}
 
@@ -145,19 +146,19 @@ func (g *Game) playerWins() {
 
 func (g *Game) PrintSummary() {
 	if g.Round.PlayerScore < g.Round.ComputerScore {
-		g.DisplayChan <- ("*********************")
-		g.DisplayChan <- ("*Winner is Computer!*")
-		g.DisplayChan <- ("*********************")
+		g.DisplayChan <- "*********************"
+		g.DisplayChan <- "*Winner is Computer!*"
+		g.DisplayChan <- "*********************"
 	} else if g.Round.PlayerScore > g.Round.ComputerScore {
-		g.DisplayChan <- ("*******************")
-		g.DisplayChan <- ("*Winner is Player!*")
-		g.DisplayChan <- ("*******************")
+		g.DisplayChan <- "*******************"
+		g.DisplayChan <- "*Winner is Player!*"
+		g.DisplayChan <- "*******************"
 	} else {
-		g.DisplayChan <- ("*****************")
-		g.DisplayChan <- ("*Game is a draw!*")
-		g.DisplayChan <- ("*****************")
+		g.DisplayChan <- "*****************"
+		g.DisplayChan <- "*Game is a draw!*"
+		g.DisplayChan <- "*****************"
 	}
-	g.DisplayChan <- ("")
+	g.DisplayChan <- ""
 	g.DisplayChan <- fmt.Sprint("Computer:", g.Round.ComputerScore, "/ 3.")
 	g.DisplayChan <- fmt.Sprint("Player  :", g.Round.PlayerScore, "/ 3.")
 }
