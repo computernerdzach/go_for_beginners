@@ -35,6 +35,6 @@ func main() {
 			<-game.RoundChan
 		}
 	}
-	game.DisplayChan <- ("")
+
 	game.PrintSummary()
 }
