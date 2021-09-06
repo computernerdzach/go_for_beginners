@@ -35,20 +35,6 @@ func main() {
 			<-game.RoundChan
 		}
 	}
-	// if playerWins < computerWins {
-	// 	fmt.Println("*********************")
-	// 	fmt.Println("*Winner is Computer!*")
-	// 	fmt.Println("*********************")
-	// } else if playerWins > computerWins {
-	// 	fmt.Println("*******************")
-	// 	fmt.Println("*Winner is Player!*")
-	// 	fmt.Println("*******************")
-	// } else {
-	// 	fmt.Println("*****************")
-	// 	fmt.Println("*Game is a draw!*")
-	// 	fmt.Println("*****************")
-	// }
-	// 	fmt.Println()
-	// 	fmt.Println("Computer:", computerWins, "/ 3.")
-	// 	fmt.Println("Player  :", playerWins, "/ 3.")
+
+	game.PrintSummary()
 }
