@@ -34,6 +34,9 @@ func main() {
 			game.RoundChan <- -1
 			<-game.RoundChan
 		}
+
 	}
+
 	game.PrintSummary()
+
 }
